@@ -1,9 +1,9 @@
 /* Archivo: db.php */
 <?php
 $host = 'localhost';
-$dbname = 'nombre_basedatos';
-$user = 'usuario';
-$password = 'contraseña';
+$dbname = 'proyecto';
+$user = 'postgres';
+$password = '';
 
 $dbconn = pg_connect("host=$host dbname=$dbname user=$user password=$password");
 
