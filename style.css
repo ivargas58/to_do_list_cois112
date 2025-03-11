@@ -1,0 +1,31 @@
+/* Archivo: style.css */
+.container {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+}
+form {
+    margin-bottom: 20px;
+}
+input, textarea {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    background: #f8f9fa;
+    margin: 5px 0;
+    padding: 10px;
+}

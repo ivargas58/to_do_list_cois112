@@ -1,17 +1,3 @@
-/* Archivo: db.php */
-<?php
-$host = 'localhost';
-$dbname = 'proyecto';
-$user = 'postgres';
-$password = '';
-
-$dbconn = pg_connect("host=$host dbname=$dbname user=$user password=$password");
-
-if (!$dbconn) {
-    die("Error: No se pudo conectar a la base de datos.");
-}
-?>
-
 /* Archivo: index.php */
 <?php
 include 'db.php';
@@ -41,47 +27,3 @@ $result = pg_query($dbconn, "SELECT * FROM tasks ORDER BY created_at DESC");
     </div>
 </body>
 </html>
-
-/* Archivo: add_task.php */
-<?php
-include 'db.php';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $task_name = $_POST['task_name'];
-    $task_description = $_POST['task_description'];
-    $query = "INSERT INTO tasks (task_name, task_description) VALUES ('$task_name', '$task_description')";
-    pg_query($dbconn, $query);
-    header("Location: index.php");
-}
-?>
-
-/* Archivo: style.css */
-.container {
-    width: 50%;
-    margin: 50px auto;
-    text-align: center;
-}
-form {
-    margin-bottom: 20px;
-}
-input, textarea {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-}
-button {
-    background: #28a745;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-ul {
-    list-style: none;
-    padding: 0;
-}
-li {
-    background: #f8f9fa;
-    margin: 5px 0;
-    padding: 10px;
-}
